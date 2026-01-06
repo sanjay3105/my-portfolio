@@ -3,16 +3,10 @@
 export default function Skills() {
   const technicalSkills = [
     { name: 'Python', level: 90, icon: '🐍' },
-    { name: 'JavaScript', level: 85, icon: '⚡' },
-    { name: 'React.js', level: 85, icon: '⚛️' },
-    { name: 'Next.js', level: 82, icon: '▲' },
     { name: 'HTML/CSS', level: 88, icon: '🎨' },
     { name: 'OpenCV', level: 85, icon: '👁️' },
     { name: 'Machine Learning', level: 80, icon: '🤖' },
-    { name: 'AWS Serverless', level: 75, icon: '☁️' },
     { name: 'Git', level: 85, icon: '📦' },
-    { name: 'CI/CD', level: 78, icon: '🔄' },
-    { name: 'Docusaurus', level: 75, icon: '📚' },
     { name: 'Markdown', level: 90, icon: '📝' },
     { name: 'Digital Marketing', level: 75, icon: '📱' },
   ]
