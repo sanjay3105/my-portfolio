@@ -6,6 +6,7 @@ export default function Skills() {
     { name: 'HTML/CSS', level: 88, icon: '🎨' },
     { name: 'OpenCV', level: 85, icon: '👁️' },
     { name: 'Machine Learning', level: 80, icon: '🤖' },
+    { name: 'Google Antigravity', level: 85, icon: '🤖' },
     { name: 'Git', level: 85, icon: '📦' },
     { name: 'Markdown', level: 90, icon: '📝' },
     { name: 'Digital Marketing', level: 75, icon: '📱' },
