@@ -174,11 +174,17 @@ export default function Contact() {
           transition: all var(--transition-base);
           text-decoration: none;
           width: 100%;
+          background: rgba(240, 253, 244, 0.6);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border: 1px solid rgba(187, 247, 208, 0.4);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
         .contact-link:hover {
           transform: translateY(-5px);
-          box-shadow: 0 10px 25px rgba(99, 102, 241, 0.2);
+          box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+          background: rgba(220, 252, 231, 0.8);
         }
 
         .contact-icon {
