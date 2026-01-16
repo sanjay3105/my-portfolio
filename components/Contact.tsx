@@ -10,8 +10,8 @@ export default function Contact() {
         </svg>
       ),
       label: 'Email',
-      value: 'sanjay3104@gmail.com',
-      link: 'mailto:sanjay3104@gmail.com',
+      value: 'sanjay3105vs@gmail.com',
+      link: 'mailto:sanjay3105vs@gmail.com',
     },
     {
       icon: (
@@ -35,7 +35,7 @@ export default function Contact() {
       ),
       label: 'LinkedIn',
       value: 'Sanjay Ramachandran',
-      link: 'https://www.linkedin.com/in/sanjay-ramachandran',
+      link: 'https://www.linkedin.com/in/sanjay-ramachandran-39b6142a5',
     },
     {
       icon: (
@@ -96,7 +96,7 @@ export default function Contact() {
             </div>
 
             <div className="contact-cta">
-              <a href="mailto:sanjay3104@gmail.com" className="btn btn-primary">
+              <a href="mailto:sanjay3105vs@gmail.com" className="btn btn-primary">
                 Send Message
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
