@@ -3,98 +3,98 @@
 import { useState, useEffect } from 'react'
 
 export default function Navigation() {
-    const [isScrolled, setIsScrolled] = useState(false)
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-    const [activeSection, setActiveSection] = useState('home')
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
 
-            // Update active section based on scroll position
-            const sections = ['home', 'about', 'projects', 'experience', 'skills', 'contact']
-            const current = sections.find(section => {
-                const element = document.getElementById(section)
-                if (element) {
-                    const rect = element.getBoundingClientRect()
-                    return rect.top <= 100 && rect.bottom >= 100
-                }
-                return false
-            })
-            if (current) setActiveSection(current)
-        }
-
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
-
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId)
+      // Update active section based on scroll position
+      const sections = ['home', 'about', 'projects', 'experience', 'skills', 'contact']
+      const current = sections.find(section => {
+        const element = document.getElementById(section)
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' })
-            setIsMobileMenuOpen(false)
+          const rect = element.getBoundingClientRect()
+          return rect.top <= 100 && rect.bottom >= 100
         }
+        return false
+      })
+      if (current) setActiveSection(current)
     }
 
-    const navItems = [
-        { id: 'home', label: 'Home' },
-        { id: 'about', label: 'About' },
-        { id: 'projects', label: 'Projects' },
-        { id: 'experience', label: 'Experience' },
-        { id: 'skills', label: 'Skills' },
-        { id: 'contact', label: 'Contact' },
-    ]
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
-    return (
-        <nav className={`nav ${isScrolled ? 'scrolled' : ''}`}>
-            <div className="container">
-                <div className="nav-content">
-                    <div className="nav-logo" onClick={() => scrollToSection('home')}>
-                        <span className="gradient-text">SR</span>
-                    </div>
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+      setIsMobileMenuOpen(false)
+    }
+  }
 
-                    {/* Desktop Menu */}
-                    <ul className="nav-menu desktop">
-                        {navItems.map((item) => (
-                            <li key={item.id}>
-                                <button
-                                    onClick={() => scrollToSection(item.id)}
-                                    className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-                                >
-                                    {item.label}
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'contact', label: 'Contact' },
+  ]
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        className="mobile-menu-btn"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        aria-label="Toggle menu"
-                    >
-                        <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}></span>
-                    </button>
-                </div>
+  return (
+    <nav className={`nav ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container">
+        <div className="nav-content">
+          <div className="nav-logo" onClick={() => scrollToSection('home')}>
+            <span className="gradient-text">SR</span>
+          </div>
 
-                {/* Mobile Menu */}
-                <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-                    <ul>
-                        {navItems.map((item) => (
-                            <li key={item.id}>
-                                <button
-                                    onClick={() => scrollToSection(item.id)}
-                                    className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-                                >
-                                    {item.label}
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
+          {/* Desktop Menu */}
+          <ul className="nav-menu desktop">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => scrollToSection(item.id)}
+                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
 
-            <style jsx>{`
+          {/* Mobile Menu Button */}
+          <button
+            className="mobile-menu-btn"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}></span>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+          <ul>
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => scrollToSection(item.id)}
+                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <style jsx>{`
         .nav {
           position: fixed;
           top: 0;
@@ -106,11 +106,11 @@ export default function Navigation() {
         }
 
         .nav.scrolled {
-          background: rgba(15, 23, 42, 0.8);
+          background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
           box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-content {
@@ -268,6 +268,6 @@ export default function Navigation() {
           background: rgba(99, 102, 241, 0.1);
         }
       `}</style>
-        </nav>
-    )
+    </nav>
+  )
 }
