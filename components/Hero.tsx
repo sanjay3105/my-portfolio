@@ -3,87 +3,82 @@
 import { useEffect, useState } from 'react'
 
 export default function Hero() {
-    const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
-    useEffect(() => {
-        setMounted(true)
-    }, [])
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
-    const scrollToContact = () => {
-        const element = document.getElementById('contact')
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' })
-        }
+  const scrollToContact = () => {
+    const element = document.getElementById('contact')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
     }
+  }
 
-    return (
-        <section id="home" className="hero">
-            <div className="hero-background">
-                <div className="gradient-orb orb-1"></div>
-                <div className="gradient-orb orb-2"></div>
-                <div className="gradient-orb orb-3"></div>
+  return (
+    <section id="home" className="hero">
+      <div className="hero-background">
+        <div className="gradient-orb orb-1"></div>
+        <div className="gradient-orb orb-2"></div>
+        <div className="gradient-orb orb-3"></div>
+      </div>
+
+      <div className="container">
+        <div className={`hero-content ${mounted ? 'animate' : ''}`}>
+          <h1 className="hero-title">
+            Hi, I'm <span className="gradient-text">Sanjay R</span>
+          </h1>
+
+          <div className="hero-subtitle">
+            <h2>Artificial Intelligence & Data Science Engineer</h2>
+          </div>
+
+          <p className="hero-description">
+            Passionate about AI, Machine Learning, and building innovative solutions
+            with Python, JavaScript, and cutting-edge technologies. Transforming data
+            into actionable insights and creating intelligent systems.
+          </p>
+
+          <div className="hero-buttons">
+            <button className="btn btn-primary" onClick={scrollToContact}>
+              <span>Get In Touch</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <a href="#projects" className="btn btn-outline">
+              View Projects
+            </a>
+          </div>
+
+          <div className="hero-stats glass">
+            <div className="stat">
+              <div className="stat-value gradient-text">3+</div>
+              <div className="stat-label">Projects</div>
             </div>
-
-            <div className="container">
-                <div className={`hero-content ${mounted ? 'animate' : ''}`}>
-                    <div className="hero-badge glass">
-                        <span className="badge-dot"></span>
-                        Available for opportunities
-                    </div>
-
-                    <h1 className="hero-title">
-                        Hi, I'm <span className="gradient-text">Sanjay R</span>
-                    </h1>
-
-                    <div className="hero-subtitle">
-                        <h2>Artificial Intelligence & Data Science Engineer</h2>
-                    </div>
-
-                    <p className="hero-description">
-                        Passionate about AI, Machine Learning, and building innovative solutions
-                        with Python, JavaScript, and cutting-edge technologies. Transforming data
-                        into actionable insights and creating intelligent systems.
-                    </p>
-
-                    <div className="hero-buttons">
-                        <button className="btn btn-primary" onClick={scrollToContact}>
-                            <span>Get In Touch</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </button>
-                        <a href="#projects" className="btn btn-outline">
-                            View Projects
-                        </a>
-                    </div>
-
-                    <div className="hero-stats glass">
-                        <div className="stat">
-                            <div className="stat-value gradient-text">3+</div>
-                            <div className="stat-label">Projects</div>
-                        </div>
-                        <div className="stat-divider"></div>
-                        <div className="stat">
-                            <div className="stat-value gradient-text">1+</div>
-                            <div className="stat-label">Internship</div>
-                        </div>
-                        <div className="stat-divider"></div>
-                        <div className="stat">
-                            <div className="stat-value gradient-text">5+</div>
-                            <div className="stat-label">Workshops</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="scroll-indicator">
-                    <div className="mouse">
-                        <div className="wheel"></div>
-                    </div>
-                    <p>Scroll to explore</p>
-                </div>
+            <div className="stat-divider"></div>
+            <div className="stat">
+              <div className="stat-value gradient-text">1+</div>
+              <div className="stat-label">Internship</div>
             </div>
+            <div className="stat-divider"></div>
+            <div className="stat">
+              <div className="stat-value gradient-text">5+</div>
+              <div className="stat-label">Workshops</div>
+            </div>
+          </div>
+        </div>
 
-            <style jsx>{`
+        <div className="scroll-indicator">
+          <div className="mouse">
+            <div className="wheel"></div>
+          </div>
+          <p>Scroll to explore</p>
+        </div>
+      </div>
+
+      <style jsx>{`
         .hero {
           position: relative;
           min-height: 100vh;
@@ -344,6 +339,6 @@ export default function Hero() {
           }
         }
       `}</style>
-        </section>
-    )
+    </section>
+  )
 }
